@@ -110,11 +110,13 @@ padding: 5px;
       margin-left: 4px;
       margin-right: 4px;
       list-style: none;
+      transition: all 2s;
   }
   .search__link--logo{
       border-radius: 10px;
       width: 40px;
       height: 40px;
+      transform: scale(2,2);
 }
   footer{
       grid-area: footer;
@@ -188,6 +190,10 @@ padding: 5px;
     width: 100px;
     height: 100px;
     border-radius: 5px;
+    transition: all 3s;
+}
+.menu__img:hover{
+    transform: scale(5,5);
 }
 .menu__title--food{
     text-align: left;
