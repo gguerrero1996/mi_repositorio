@@ -3,70 +3,62 @@
     padding: 0px;
 }
 
-.container{
+.div__principal{
     display: grid;
     grid-template-areas: 
     "header header header"
     "main main main"
     "footer footer footer";
     grid-template-columns: repeat(3,1fr);
-    grid-template-rows: 0.5fr 4.4fr 0.1fr;
+    grid-template-rows: 1fr 8.9fr 0.1fr;
     width: 100vw;
     height: 100vh;
-    background-color: rgb(177, 97, 51);
-    background-image: linear-gradient((184deg, rgba(255,63,0,1) 0%, rgba(226,86,18,1) 19%, rgba(224,138,18,1) 63%, rgba(233,156,29,1) 72%, rgba(241,182,21,1) 85%)); 
+    background-color: rgb(0, 0, 0);
 }
-.header{
+.encabezado{
     grid-area: header;
-    /* grid-column: 1/4; */
     display: grid;
     grid-template-columns: repeat(6,1fr); 
     align-items: center;   
     width: 100%;
-    background-color: rgba(118, 54, 44, 0.595);
+    background-color: rgba(118, 54, 44, 0);
 }
-.header__logo{
-grid-column-start: 1;
-width: 60px;
-height: 60px;
-padding: 5px;
+.encabezado__logo{
+    grid-column-start: 1;
+    width: 60px;
+    height: 60px;
+    padding: 5px;
 }
-.header__titulo{
+.encabezado__titulo{
     grid-column: 2/4;
-    color: white;
+    color: rgb(0, 0, 0);
     font-family: "arial", sans-serif;
-    font-size: 30px;
+    font-size: 2em;
 }
-.mobile__nav{
-    display: none;
-}
-.header__nav{
+.encabezado__nav{
     display: flex;
     flex-wrap: nowrap;
     grid-column: 4/7;
 }
-.nav__bar{
+.navegador{
     list-style: none;
     }
 .bar__link{
     display: inline-block;
     padding-left: 5px;
-    border-left: solid 2px white;
+    /* border-left: solid 2px white; */
     }
 .bar__link:hover{
-    background-color: rgb(192, 113, 17);
+    background-color: rgba(166, 253, 249, 0.849);
 }
-
-#bar__first{
-    border-left: none;
-}    
+ 
 .bar__link--name{
     text-decoration: none;
     color: white;
-    font-size: 20px;
+    font-size: 1.25em;
     font-family: Arial, sans-serif;
 }
-.main{
+.principal{
     grid-area: main;
       display: flex;
       flex-direction: column;
@@ -74,7 +66,7 @@ padding: 5px;
       justify-content: space-between;
       /* grid-column: 1/3; */
 }
-  .main__section{
+  .principal__section{
       display: flex;
       flex-direction: column;
       flex-wrap: nowrap;
@@ -85,7 +77,7 @@ padding: 5px;
   }
   .section__title{
       text-align: center;
-      font-size: 40px;
+      font-size: 3em;
       font-family: Arial, sans-serif;
       color: white;
     }
@@ -93,7 +85,7 @@ padding: 5px;
       text-align: left;
       font-family: Arial, sans-serif;
       color: white;
-      font-size: 25px;
+      font-size: 1.5em;
   }
   #index__text{
       padding-left: 10px;
@@ -110,27 +102,25 @@ padding: 5px;
       margin-left: 4px;
       margin-right: 4px;
       list-style: none;
-      transition: all 2s;
   }
   .search__link--logo{
       border-radius: 10px;
       width: 40px;
       height: 40px;
-      transform: scale(2,2);
+      transition: all 2s;
 }
+
   footer{
       grid-area: footer;
-      /* grid-column: 1/4; */
       display: flex;
       justify-content: center;
-      background-color: rgba(118, 54, 44, 0.595);
 }
   .footer__text{
-      font-size: 20px;
-      color: ghostwhite;
+      font-size: 1.25em;
+      color: rgb(0, 0, 0);
   }
 /* CSS INDEX COMPLEMENTOS */
-.container__index{
+.div__principal--index{
     display: grid;
     grid-template-areas: 
     "header header header"
@@ -139,10 +129,7 @@ padding: 5px;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: 0.5fr 4.4fr 0.1fr;
     width: 100vw;
-    height: 100vh;
-    background-color: rgb(177, 97, 51);
-    background-image: none;
-    background-image: linear-gradient((184deg, rgba(255,63,0,1) 0%, rgba(226,86,18,1) 19%, rgba(224,138,18,1) 63%, rgba(233,156,29,1) 72%, rgba(241,182,21,1) 85%)); 
+    height: 100vh;  
 }
 /*En caso de necesitar agregar algo en ese espacio 
 .aside__index{
@@ -150,7 +137,7 @@ padding: 5px;
 } */
 
 /* CSS MENU COMPLEMENTOS */
-#main__menu{
+#principal__menu{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -164,7 +151,7 @@ padding: 5px;
     color: white;
 
 }
-.container__card{
+.menu__card{
     padding: 15px;
     display: flex;
     flex-direction: row;
@@ -190,10 +177,11 @@ padding: 5px;
     width: 100px;
     height: 100px;
     border-radius: 5px;
-    transition: all 3s;
+    transition: all 3.5s;
 }
 .menu__img:hover{
-    transform: scale(5,5);
+    transform: scale(3,3);
+    border-radius: 50px;
 }
 .menu__title--food{
     text-align: left;
@@ -265,7 +253,6 @@ padding: 5px;
 #about__text{
     font-size: 30px;
 }
-/* NOTA: NO ENTIENDO POR QUE NO QUEDA IGUAL AL INDEX PUES ES EL MISMO CODIGO */
 /* CSS COMPLEMENTO CONTACT */
 #body__contact{
     text-align: center;
@@ -306,7 +293,7 @@ padding: 5px;
     border: none;
 }
 @media only screen and (max-width:750px) {
-.container__index{
+.div__principal--index{
     display: grid;
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: 0.5fr auto 0.1fr;
@@ -316,33 +303,51 @@ padding: 5px;
     "footer footer";
     background-image: linear-gradient((184deg, rgba(255,63,0,1) 0%, rgba(226,86,18,1) 19%, rgba(224,138,18,1) 63%, rgba(233,156,29,1) 72%, rgba(241,182,21,1) 85%)); 
 }
-.header{
+.encabezado{
         grid-template-areas: 
-        "titulo nav";
+        "titulo nav nav";
         grid-template-columns: repeat(2,2fr 1fr);
 }
-.header__titulo{
+.encabezado__titulo{
     grid-area: titulo;
     justify-self: start;
     align-self: center;
+    font-size: 1.5em;
 }
-.header__logo{
+.encabezado__logo{
     display: none;
 }
-.nav__bar   {
-    display: none;
+.encabezado__nav{
+    grid-area: nav;
 }
+.bar__link{
+    display: flex;
+    flex-direction: column;
+    padding:0px;
+    margin: 0px;
+    border: none
+}
+.bar__link--name{
+    font-size: 1em;
+}
+.section__text{
+    font-size: 1.5em;
+}
+.div__principal{
+    height: auto;
+}
+
 /* .header__nav.hover{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
- } */
+ } */ */
  /* MOBILE MENU */
  .menu__title{
     font-size: 25px;
  }
- .container__card{
+ .menu__card{
      flex-direction: column;
      flex-wrap: wrap;
      justify-content: space-around;
