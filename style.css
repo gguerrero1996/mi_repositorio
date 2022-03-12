@@ -42,6 +42,9 @@
     padding-left: 10px;
     padding-right: 10px;
 }
+
+/*  SASS no reconoce box shadow */
+
 .bar__link:hover{
     border: solid 2px rgb(255, 255, 255, 0.589);
     border-radius: 10px;

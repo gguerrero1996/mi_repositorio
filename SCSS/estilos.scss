@@ -1,0 +1,783 @@
+@import "_variables.scss";
+@import "_mixins.scss";
+@import "_extend.scss";
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Div Principal Padre de todos los contenidos organiza la estructura de todas las páginas con grid */
+
+.div__principal{
+    display: grid;
+    grid-template-areas: 
+    "header header header"
+    "main main main"
+    "footer footer footer";
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 1fr 8.9fr 0.1fr;
+    width: 100vw;
+    height: 100vh;
+    background-color: $color2;
+}
+
+/* Header Presente en todas las páginas */
+
+.encabezado{
+    grid-area: header;
+    display: grid;
+    grid-template-columns: repeat(6,1fr); 
+    align-items: $align;   
+    @extend.width;
+    background-color: rgba(118, 54, 44, 0);
+    background-image: linear-gradient(rgba(128, 128, 128, 0), );
+}
+.encabezado__logo{
+    grid-column: 1/4;
+    padding: 5px;
+}
+.encabezado__nav{
+    display: flex;
+    flex-wrap: nowrap;
+    grid-column: 4/7;
+}
+.navegador{
+    list-style: none;
+    }
+.bar__link{
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.bar__link:hover{
+    border: solid 2px $color;
+    border-radius: 10px;
+}
+.bar__link--name{
+    text-decoration: none;
+    color: $color;
+    font-family: $font, sans-serif;
+}
+.bar__link--name:hover{
+    color: $color;
+}
+.principal{
+    grid-area: main;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.principal__section{
+    display: flex;
+    @include page(column, space-evenly);
+    flex-wrap: nowrap;
+    align-items: $align;
+}
+
+/*hijo de principal index y principal*/
+
+
+.section__title{
+    text-align: $align;
+    font-size: 3em;
+    font-family: $font, sans-serif;
+    color: $color;
+}
+.index__text{
+    text-align: left;
+    font-family: $font, sans-serif;
+    color: $color;
+    font-size: 2em;
+    padding-left: 10px;
+}
+
+.redes__search{
+    display: flex;
+    @include page(row, center);
+}
+.search__link{
+    margin-left: 4px;
+    margin-right: 4px;
+    list-style: none;
+}
+.search__link--logo{
+    border-radius: 10px;
+    @include size(20px, 20px);
+}
+.search__link--logo:hover{
+    box-shadow: rgba(255, 254, 254, 0.4) 0px 4px 8px,
+    rgba(255, 254, 254, 0.3) 0px 14px 26px -6px, rgba(255, 255, 255, 0.2) 0px -6px 0px inset;
+}
+
+.footer{
+    grid-area: footer;
+    display: flex;
+    justify-content: $align;
+    flex-wrap: wrap;
+    padding-top: 10px;
+    margin: 0px;
+}
+.footer__text{
+    font-size: 1.25em;
+    color: $color;
+}
+
+/* CSS INDEX COMPLEMENTOS */
+/*padre de todo en el index*/
+
+#div__principal--index{
+    height: auto;
+} 
+
+/*hijo de div principal y de div principal index*/
+
+#principal__index{
+    @include page(column, space-evenly);
+    height: auto;
+    overflow: hidden;
+} 
+
+/*hijo de principal index y principal*/
+
+.carousel__imagen{
+    height: 500px;
+
+}
+
+/*hijo de principal index y principal*/
+
+.index__subtitle{
+    display: block;
+    color: $color;
+    text-align: $align;
+    padding: 10px;
+    margin-top: 10px;
+}
+.index__services{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.services__image{
+    @include size(150px, 150px);
+    transition: background-color 1s;
+}
+
+/*En caso de necesitar agregar algo en ese espacio 
+.aside__index{
+    grid-area: aside;
+} */
+
+/* CSS MENU COMPLEMENTOS */
+
+#principal__menu{
+    display: flex;
+    @include page(row, space-around);
+    flex-wrap: wrap;
+    grid-column: 1/4
+}
+.menu__imagen{
+    display: flex;
+    justify-content: $align;
+    align-items: $align;
+    padding: 10px;
+}
+.menu__imagen--size{
+    @include size(400px, 400px);
+}
+.menu__title{
+    text-align: $align;
+    font-family: $font;
+    font-size: 40px;
+    color: $color;
+
+}
+.menu__card{
+    display: flex;
+    @include page(row, space-around);
+    flex-wrap: nowrap;
+    align-items: $align;
+}
+.menu__card--border{
+    width: 15rem;
+}
+.card-body{
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.021));
+}
+.card-title{
+    color: $color;
+}
+.card-text{
+    color: $color;
+}
+.btn:hover{
+    transform: scale(1.1);
+    box-shadow: rgba(255, 254, 254, 0.4) 0px 2px 4px,
+    rgba(255, 254, 254, 0.3) 0px 7px 13px -3px, rgba(255, 255, 255, 0.2) 0px -3px 0px inset;
+}
+.card__imagen{
+    height: 100px;
+}
+
+/* CSS COMPLEMENTO REVIEW */
+
+#div__principal--review{
+    height: auto;
+}
+.principal__review{
+    grid-area: main;
+    display: flex;
+    @include page(column, flex-start);
+    align-items: $align;
+}
+.review__cards{
+    display:grid;
+    grid-template-columns: repeat(4 , 1fr);
+    grid-auto-rows: 27rem;
+    padding: 20px;
+    gap :20px;
+}
+.card__full{
+    @include size(13rem, 25rem);
+    box-shadow: 12px 12px 2px 1px rgba(255, 255, 255, 0.2);
+}
+.card-title-review{
+    color: $color2;
+}
+.card-text-review{
+    color: $color2;
+}
+
+/* CSS COMPLEMENTO ABOUT US */
+
+.div__principal--aboutus{
+    display: grid;
+    grid-template-areas: 
+    "header header header"
+    "main main main"
+    "footer footer footer";
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 1fr 8.9fr 0.1fr;
+    width: 100vw;
+    height: 100vh;
+    background-color: $color2;
+}
+#aboutus__section{
+    width: 50%;
+}
+.aboutus__image{
+    display: flex;
+    justify-content: $align;
+    align-items: $align;
+    padding: 10px;
+    width: 50%;
+}
+.principal__aboutus{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.section__aboutus{
+    align-items: flex-end;
+    padding-right: 40px;
+}
+#aboutus__text{
+    text-align: right;
+}
+
+/* CSS COMPLEMENTO CONTACT */
+
+.principal__contact{
+    display: grid;
+    grid-template-columns: repeat(4 , 1fr);
+    grid-auto-rows: auto;
+    gap: 10px;
+}
+.contact__left{
+    grid-column: 1/3;
+    display: flex;
+    @include page(column, center);
+    align-items: $align;
+}
+.contact__left form{
+    display: flex;
+    @include page(column, center);
+    align-items: $align;
+    border: solid $color 1px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.185);
+    width: 70%;
+}
+.contact__right{
+    grid-column: 3/5;
+    display: flex;
+    @include page(column, center);
+    align-items: $align;
+}
+.mb-3{
+    display: inline-block;
+    width: 80%;
+}
+.contact__button{
+    margin-top: 10px;
+    border-radius: 10px;
+}
+.contact__imagen{
+    display: flex;
+    justify-content: $align;
+    align-items: $align;
+    padding: 10px;
+    transition: all 1.5s;
+    height: 40%;
+}
+.contact__imagen--size{
+    display: inline-block;
+    @include size(400px,200px);
+}
+.contactos{
+    display: flex;
+    @include page(column, space-evenly);
+    align-items: $align;
+    flex-wrap: wrap;
+    height: 40%;
+}
+.contactos div{
+    display: flex;
+    justify-content: flex-start;
+    align-items: $align;
+    width: 60%;
+}
+.contactos div p{
+    margin-left: 1rem;
+}
+.contacto__nombre{
+    font-size: 1.75em;
+    color: $color2;
+    border-radius: 10px;
+}
+.contacto__contenido{
+    font-size: 1.25em;
+    color: $color;
+    text-align: $align;
+}
+
+/* MEDIA QUERY GENERAL */
+
+@media only screen and (max-width:992px){
+.div__principal{
+    display: grid;
+    grid-template-areas: 
+    "header header header"
+    "main main main"
+    "footer footer footer";
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 1fr auto 0.1fr;
+    background-color: $color2;
+    }
+    .principal{
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    }
+.index__imagen{
+    display: flex;
+    justify-content: $align;
+    align-items: $align;
+    padding: 10px;
+}
+.index__imagen--size{
+    @include size(200px, 200px);
+}
+}
+@media only screen and (max-width:750px) {
+.div__principal--index{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 0.5fr auto 0.1fr;
+    grid-template-areas: 
+    "header header"
+    "main main"
+    "footer footer";
+    background-image: linear-gradient(to bottom, $color2, rgb(41, 41, 41)); 
+}
+.encabezado{
+    grid-template-areas: 
+    "logo nav nav";
+    grid-template-columns: repeat(2,2fr 1fr);
+}
+.encabezado__logo{
+    grid-area: logo;
+}
+.encabezado__nav{
+    grid-area: nav;
+}
+.bar__link{
+    display: flex;
+    flex-direction: column;
+    padding:0px;
+    margin: 0px;
+    border: none
+}
+.bar__link--name{
+    font-size: 1em;
+}
+.section__text{
+    font-size: 1.5em;
+}
+.index__imagen--size{
+    @include size(50px, 50px);
+}
+#index__text{
+    padding: 10px;
+}
+.div__principal{
+    height: auto;
+}
+footer{
+    @include page(column, center);
+    align-items: center;
+    margin: 0px;
+}
+.footer__text{
+    font-size: 1em;
+}
+#principal__menu{
+    flex-wrap: wrap;
+}
+.menu__imagen{
+    display: none;
+}
+.menu__title{
+    font-size: 25px;
+}
+.menu__card{
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: $align;
+    margin: 0px;
+    padding: 0px;
+}
+.menu__img{
+    @include size(50px, 50px);
+    border-radius: 5px;
+}
+}
+
+/* CUBO */
+
+*,
+*::before,
+*::after {
+    transform-style: preserve-3d;
+}
+.container-3D {
+    position: relative;
+    display: flex;
+    @include page(column, center);
+    align-items: $align;
+    @include size(300px, 300px);
+}
+.flopper {
+    position: relative;
+    width: auto;
+    height: auto;
+    display: flex;
+    @include page(column, center);
+    align-items: $align;
+    overflow: visible;
+    transition: all 0.5s ease-in-out;
+    /*animation: rotate 6s linear infinite;*/
+}  
+.figure {
+    display: flex;
+    align-items: $align;
+    @include page(column, center);
+    position: absolute;
+    @include size(300px, 300px);
+    transform-origin: 50% 50%;
+    padding: 20px 25px;
+    box-shadow: rgba(255, 255, 255, 0.07) 0px 1px 2px, rgba(255, 255, 255, 0.07) 0px 2px 4px,
+    rgba(255, 255, 255, 0.07) 0px 4px 8px, rgba(255, 255, 255, 0.07) 0px 8px 16px,
+    rgba(255, 255, 255, 0.07) 0px 16px 32px, rgba(255, 255, 255, 0.07) 0px 32px 64px;
+
+}
+.figure h2 {
+    font-size: 20pt;
+    line-height: 20pt;
+    margin: 20px 0px 10px 0px;
+}
+.figure p {
+    font-size: 12pt;
+    line-height: 18pt;
+    margin: 0 0 15px 0;
+    text-align: center;
+}
+
+.figure a {
+    position: relative;
+    @include size(130px, 40px);
+    @include page(column, center);
+    display: flex;
+    align-items: $align;
+    background: $color;
+    color: $color2;
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+.figure a::after {
+    position: absolute;
+    content: "";
+    bottom: 100%;
+    left: 0;
+    @include size(100%, 100%);
+    background: $color2;
+    z-index: -1;
+    transition: all 0.3s ease-in-out;
+}
+.figure a:hover::after {
+    bottom: 0;
+    transition: all 0.3s ease-in-out;
+}
+.figure a:hover {
+    color: $color;
+    transition: all 0.3s ease-in-out;
+}
+.front {
+    transform: translateZ(150px);
+    background-image: url(../Assets/contenido/Arepa.png);
+    @extend.carrousel;
+}
+.back {
+    transform: rotateY(180deg) translateZ(150px);
+    background-image: url(../Assets/contenido/arepa2.png);
+    @extend.carrousel;
+
+}
+
+.top {
+    transform: rotateX(90deg) translateZ(150px);
+    background-image: url(../Assets/contenido/arepa3.png);
+    @extend.carrousel;
+}
+.bottom {
+    transform: rotateX(-90deg) translateZ(150px);
+    background-image: url(../Assets/contenido/tequeño.png);
+    @extend.carrousel;
+
+}
+.left {
+    transform: rotateY(-90deg) translateZ(150px);
+    background-image: url(../Assets/contenido/empanada.png);
+    @extend.carrousel;
+
+}
+.right {
+    transform: rotateY(90deg) translateZ(150px);
+    background-image: url(../Assets/contenido/reinapepiada.png);
+    @extend.carrousel;
+
+}
+.about__label {
+    position: absolute;
+    display: flex;
+    @include page(column, center);
+    @include size(40px, 40px);
+    align-items: $align;
+    background: var(--face_color);
+    color: $color;
+    font-size: 14pt;
+    margin: 0;
+    padding: 0;
+    box-shadow: rgba(255, 254, 254, 0.4) 0px 2px 4px,
+    rgba(255, 254, 254, 0.3) 0px 7px 13px -3px, rgba(255, 255, 255, 0.2) 0px -3px 0px inset;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+.about__label:hover {
+    cursor: pointer;
+}
+.about__label:nth-child(1) {
+    left: -55px;
+    padding-bottom: 5px;
+}
+.about__label:nth-child(2) {
+    right: -55px;
+    padding-bottom: 5px;
+}
+.about__label:nth-child(3) {
+    top: -55px;
+}
+.about__label:nth-child(4) {
+    bottom: -55px;
+}
+.right .about__label {
+    color: $color;
+}
+.left .about__label {
+    color: $color;
+}
+#swap-left-front:checked ~ .flopper {
+    @extend.cubo;
+}
+#swap-right-front:checked ~ .flopper {
+    @extend.cubo-dos;
+}
+#swap-up-front:checked ~ .flopper {
+    @extend.cubo-tres;
+}
+#swap-down-front:checked ~ .flopper {
+    @extend.cubo-cuatro;
+}
+#swap-left-back:checked ~ .flopper {
+    @extend.cubo-dos;
+}
+#swap-right-back:checked ~ .flopper {
+    transform: rotateY(-270deg);
+    transition: all 0.5s ease-in-out;
+}
+#swap-up-back:checked ~ .flopper {
+    @extend.cubo-tres;
+}
+#swap-down-back:checked ~ .flopper {
+    @extend.cubo-cuatro;
+}
+#swap-left-top:checked ~ .flopper {
+    @extend.cubo;
+}
+#swap-right-top:checked ~ .flopper {
+    @extend.cubo-dos;
+}
+#swap-up-top:checked ~ .flopper {
+    transform: rotateY(-180deg);
+    transition: all 0.5s ease-in-out;
+}
+#swap-down-top:checked ~ .flopper {
+    transform: rotateX(0deg);
+    transition: all 0.5s ease-in-out;
+}
+#swap-left-bottom:checked ~ .flopper {
+    @extend.cubo;
+}
+#swap-right-bottom:checked ~ .flopper {
+    @extend.cubo-dos;
+}
+#swap-up-bottom:checked ~ .flopper {
+    transform: rotateX(0deg);
+    transition: all 0.5s ease-in-out;
+}
+#swap-down-bottom:checked ~ .flopper {
+    @extend.cubo-cinco;
+}
+#swap-left-left:checked ~ .flopper {
+    @extend.cubo-cinco;
+}
+#swap-right-left:checked ~ .flopper {
+    transform: rotateY(-360deg);
+    transition: all 0.5s ease-in-out;
+}
+#swap-up-left:checked ~ .flopper {
+    @extend.cubo-tres;
+}
+#swap-down-left:checked ~ .flopper {
+    @extend.cubo-cuatro;
+}
+#swap-left-right:checked ~ .flopper {
+    transform: rotateY(0deg);
+    transition: all 0.5s ease-in-out;
+}
+#swap-right-right:checked ~ .flopper {
+    transform: rotateY(-180deg);
+    transition: all 0.5s ease-in-out;
+}
+#swap-up-right:checked ~ .flopper {
+    @extend.cubo-tres;
+}
+#swap-down-right:checked ~ .flopper {
+    @extend.cubo-cuatro;
+}
+.cube__input {
+    display: none;
+}
+@keyframes rotate {
+    0% {
+    transform: rotateY(0deg) rotateX(0deg);
+    }
+    50% {
+    transform: rotateY(180deg) rotateX(30deg);
+    }
+    100% {
+    transform: rotateY(360deg) rotateX(0deg);
+    }
+}
+@media (max-width: 435px){
+    figure {
+        @include size(250px, 250px);
+    }
+    .front {
+    transform: translateZ(125px);
+    }
+    .back {
+    transform: rotateY(180deg) translateZ(125px);
+    }
+    .top {
+    transform: rotateX(90deg) translateZ(125px);
+    }
+    .bottom {
+    transform: rotateX(-90deg) translateZ(125px);
+    }
+    .left {
+    transform: rotateY(-90deg) translateZ(125px);
+    }
+    .right {
+    transform: rotateY(90deg) translateZ(125px);
+    }
+    figure div {
+    height: 80px;
+    }
+    figure h2 {
+    font-size: 18pt;
+    line-height: 18pt;
+    }
+    figure p {
+    font-size: 11pt;
+    line-height: 15pt;
+    }
+    figure a {
+    height: 60px;
+    }
+    .about__label {
+    @include size(30px, 30px);
+    font-size: 12pt;
+    }
+    .about__label:nth-child(1) {
+    left: -40px;
+    }
+    .about__label:nth-child(2) {
+    right: -40px;
+    }
+    .about__label:nth-child(3) {
+    top: -40px;
+    }
+    .about__label:nth-child(4) {
+    bottom: -40px;
+    }
+}
+/* ANIMACIONES */
+.contact__imagen:hover{
+    transform: scale(1.2);
+    box-shadow: rgba(255, 254, 254, 0.4) 0px 2px 4px,
+    rgba(255, 254, 254, 0.3) 0px 7px 13px -3px, rgba(255, 255, 255, 0.2) 0px -3px 0px inset;
+} 
+
+/*hijo de contact__right */
+.index__services .services__image:hover{
+    border: solid $color 1px;
+    border-radius: 10px;
+    box-shadow: rgba(255, 254, 254, 0.4) 0px 4px 8px,
+    rgba(255, 254, 254, 0.3) 0px 14px 26px -6px, rgba(255, 255, 255, 0.2) 0px -6px 0px inset;
+    background-color: rgb(82, 82, 82);
+}

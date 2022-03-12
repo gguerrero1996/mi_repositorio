@@ -1,0 +1,33 @@
+.width{
+    width: 100%;
+}
+
+.carrousel{
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.cubo{
+    transform: rotateY(90deg);
+    transition: all 0.5s ease-in-out;
+}
+
+.cubo-dos{
+    transform: rotateY(-90deg);
+    transition: all 0.5s ease-in-out;
+}
+
+.cubo-tres{
+    transform: rotateX(-90deg);
+    transition: all 0.5s ease-in-out;
+}
+
+.cubo-cuatro{
+    transform: rotateX(90deg);
+    transition: all 0.5s ease-in-out;
+}
+
+.cubo-cinco{
+    transform: rotateY(180deg);
+    transition: all 0.5s ease-in-out;
+}
