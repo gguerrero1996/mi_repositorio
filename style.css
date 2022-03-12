@@ -42,6 +42,9 @@
     padding-left: 10px;
     padding-right: 10px;
 }
+
+/*  SASS no reconoce box shadow */
+
 .bar__link:hover{
     border: solid 2px rgb(255, 255, 255, 0.589);
     border-radius: 10px;
@@ -128,6 +131,7 @@ footer{
 } /*hijo de principal index y principal*/
 .carousel__imagen{
     height: 500px;
+
 }/*hijo de principal index y principal*/
 .index__subtitle{
     display: block;
