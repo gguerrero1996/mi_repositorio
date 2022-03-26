@@ -8,6 +8,7 @@
     <meta name="keywords" content="comida, venezolana, venezolano, venezuela, arepa, tequeño, empanada, reina pepiada, merida, sabores">
     <title>Contacto</title>
     <link rel="stylesheet" href="CSS/estilos.css">
+    <link rel="icon" href="Assets/contenido/favicon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body class="cuerpo">
@@ -32,11 +33,11 @@
                 </div>
             </nav>
         </header>
-        <main class="principal">
+        <main id="main__contact" class="principal">
             <div class="principal__contact container-fluid">
                     <div class="contact__left">
-                        <h1 class="section__title">Contáctanos</h1>
-                        <form action="">
+                        <h1 class="contact__title">Contáctanos</h1>
+                        <form class="contact__form" action="">
                             <div class="mb-3">
                                 <label for="name" class="form-label"></label>
                                 <input type="fname" class="form-control" id="exampleFormControlInput1" placeholder="Nombre y Apellido" required>
@@ -54,16 +55,16 @@
                     </div>
                     <div class="contact__right">
                         <div class="contactos container-fluid">
-                            <div>
-                                <span class="iconify-inline" data-icon="fxemoji:cellphone" data-width="40" data-height="40"></span>
+                            <div class="contactos__div">
+                                <span class="iconify-inline contact__icono" data-icon="fxemoji:cellphone" data-width="40" data-height="40"></span>
                                 <p class="contacto__contenido">22 5555 5555</p>
                             </div>
-                            <div>
-                                <span class="iconify-inline" data-icon="emojione-v1:e-mail" data-width="40" data-height="40"></span>
+                            <div class="contactos__div">
+                                <span class="iconify-inline contact__icono" data-icon="emojione-v1:e-mail" data-width="40" data-height="40"></span>
                                 <p class="contacto__contenido">sabores@merida.com</p>
                             </div>
-                            <div>
-                                <span class="iconify-inline" data-icon="emojione:world-map" data-width="40" data-height="40"></span>
+                            <div class="contactos__div">
+                                <span class="iconify-inline contact__icono" data-icon="emojione:world-map" data-width="40" data-height="40"></span>
                                 <p class="contacto__contenido">Avenida Sabor 16 Tokyo Japón</p>
                             </div>
                         </div>
